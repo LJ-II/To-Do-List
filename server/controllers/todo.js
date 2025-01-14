@@ -1,6 +1,7 @@
 import { connectToDB } from "../util/connect.js";
 import Todo from "../models/todoModel.js";
 import { createError } from "../util/error.js";
+import { connect } from "mongoose";
 
 export async function getAllTodos(req, res, next) 
 {
@@ -9,11 +10,67 @@ export async function getAllTodos(req, res, next)
     res.status(200).send(todos);
 }
 
-export async function getTodo(req, res, next) {}
+export async function getTodo(req, res, next) 
+{
+    try 
+    {
+        await connectToDB();
+        const todo = await Todo.findById(req.params.id);
+        if (!todo) return next(createError(404, "Todo not found"));
+        if (todo.userID.toString() !== req.user.id) 
+            return next(createError("404", "Not Authorized!"));
+        res.status(200).send(todo);
+    } 
+    catch (error) 
+    {
+        next(createError(404, "Todo not found"));
+    }
+    
+}
 
-export async function updateTodo(req, res, next) {}
+export async function updateTodo(req, res, next) 
+{
+    const id = req.params.id;
+    if (!req.body) return next(createError(404, "Missing fields!"));
+    try 
+    {
+        await connectToDB();
+        const todo = await Todo.findById(id);    
+        if (todo.userID.toString() !== req.user.id) 
+            return next(createError("404", "Not Authorized!"));
+        todo.title = req.body.title || todo.title;
+        if (req.body.isCompleted !== undefined)
+        {
+            todo.isCompleted = req.body.isCompleted;
+        }
+        await todo.save();
+        res.status(200).json({ message: "Todo updated!" });
+    } 
+    catch (error) 
+    {
+        return next(createError(404, "Todo not found!"));
+    }
+}
 
-export async function deleteTodo(req, res, next) {}
+export async function deleteTodo(req, res, next) 
+{
+    try 
+    {
+        await connectToDB();
+        const todo = await Todo.deleteOne(
+        {
+            _id: req.params.id,
+            userID: req.user.id
+        })
+
+        if (!todo.deletedCount) return next(createError(400, "Todo not found!"))
+            res.status(200).json({ message: "Todo deleted!" })
+    } 
+    catch (error) 
+    {
+        return next(createError(400, "Todo not found!"))
+    }
+}
 
 export async function addTodo(req, res, next) 
 {
@@ -25,5 +82,6 @@ export async function addTodo(req, res, next)
 
     await connectToDB();
     const newTodo = new Todo({ title: req.body.title, userID: req.user.id });
-    res.send(newTodo);
+    await newTodo.save();
+    res.status(201).json(newTodo);
 }
