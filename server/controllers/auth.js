@@ -39,9 +39,9 @@ export async function login(req, res, next)
     }
     await connectToDB();
     const user = await User.findOne({ email: req.body.email });
-    if (!user) return next(createError(400, "Invalid credentials"));
+    if (!user) return next(createError(400, "Invalid credentials!"));
     const isPasswordCorrect = await bcrypt.compare(req.body.password,user.password);
-    if (!isPasswordCorrect) return next(createError(400, "Invalid credentials"));
+    if (!isPasswordCorrect) return next(createError(400, "Invalid credentials!"));
     const token = jwt.sign({id:user._id}, process.env.JWT);
     console.log(token);
     res.cookie("access_token", token, 
