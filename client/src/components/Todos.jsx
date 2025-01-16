@@ -30,7 +30,7 @@ const Todos = () =>
         {
             return <h1 className="text-2xl py-2 text-center">Loading...</h1>;
         }
-    console.log(data);
+    /*console.log(data);*/
     
 
     return (
