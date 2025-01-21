@@ -5,6 +5,8 @@ import { connect } from "mongoose";
 
 export async function getAllTodos(req, res, next) 
 {
+    console.log(req.user);
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     await connectToDB();
     const todos = await Todo.find({ userID: req.user.id });
     res.status(200).send(todos);
@@ -12,9 +14,9 @@ export async function getAllTodos(req, res, next)
 
 export async function getTodo(req, res, next) 
 {
+    await connectToDB();
     try 
     {
-        await connectToDB();
         const todo = await Todo.findById(req.params.id);
         if (!todo) return next(createError(404, "Todo not found"));
         if (todo.userID.toString() !== req.user.id) 
@@ -74,12 +76,12 @@ export async function deleteTodo(req, res, next)
 
 export async function addTodo(req, res, next) 
 {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     console.log(req.body);
-    if (!req.body || !req.body.title)
-    {
-        return next(createError(404, "Title is required!"))
-    }
 
+    if (!req.body || !req.body.title)
+        return next(createError(404, "Title is required!"))
+    
     await connectToDB();
     const newTodo = new Todo({ title: req.body.title, userID: req.user.id });
     await newTodo.save();
