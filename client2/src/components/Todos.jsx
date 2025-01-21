@@ -8,6 +8,7 @@ import DeleteIcon from "./icons/DeleteIcon";
 import EditIcon from "./icons/EditIcon";
 import TickIcon from "./icons/TickIcon";
 import EditTodo from "./EditTodo";
+import Profile from "./Profile";
 
 const fetcher = (url, options = {}) =>
     fetch(url, 
@@ -181,8 +182,8 @@ const Todos = () =>
     
     return (
         <div className="mx-auto mt-20 max-w-lg px-4 w-full flex flex-col gap-6">
-            <div>
-                <CircleUserRound />
+            <div className="flex justify-end">
+                <Profile />
             </div>
             <h1 className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-4xl text-center mb-4 text-transparent bg-clip-text">Todo App</h1>
             <form onSubmit={handleAddTodo} className="flex gap-4 items-center">
