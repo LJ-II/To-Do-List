@@ -16,7 +16,7 @@ dotenv.config();
 
 const corsOptions = 
 {
-    origin: "http://localhost:5173",
+    origin: "https://to-do-list-client-3etv.onrender.com",
     credentials: true,
 };
 
@@ -26,10 +26,10 @@ app.use(cookieParser());
 app.use("/api/user", AuthRoute);
 app.use("/api/todos", ToDoRoute);
 
-app.get("/", (req, res, next) =>
+/*app.get("/", (req, res, next) =>
     {
         res.send("Hello World!");
-    });
+    });*/
 
 // global error handler
 app.use((err, req, res, next) => 
@@ -46,8 +46,8 @@ app.listen(PORT, () =>
 
 
     
-    /*const express = require('express');*/
-    /*const path = require('path');
+    /*const express = require('express');
+    const path = require('path');*/
     
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = dirname(__filename);
@@ -59,7 +59,7 @@ app.listen(PORT, () =>
         res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
     });
     
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));*/
+    /*app.listen(PORT, () => console.log(`Server running on port ${PORT}`));*/
 
     
         
