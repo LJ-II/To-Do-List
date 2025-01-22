@@ -40,6 +40,8 @@ app.use("/api/todos", ToDoRoute);
     app.use(express.static(path.join(__dirname, "../client2/dist")));
 
     console.log(path.join(__dirname, "../client2/dist"));
+    console.log(__dirname);
+    console.log(__filename);
 
 
 // global error handler
