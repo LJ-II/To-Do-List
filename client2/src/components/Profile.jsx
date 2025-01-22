@@ -3,6 +3,8 @@ import { CircleUserRound } from "lucide-react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const Profile = () =>
 {
     const navigate = useNavigate();
@@ -10,7 +12,7 @@ const Profile = () =>
     {
         try 
         {
-            const response = await fetch("http://localhost:3000/api/user/logout", 
+            const response = await fetch(`${apiUrl}/api/user/logout`, 
             {
                 method: "POST",
                 credentials: "include",

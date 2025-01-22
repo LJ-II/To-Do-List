@@ -10,6 +10,8 @@ import TickIcon from "./icons/TickIcon";
 import EditTodo from "./EditTodo";
 import Profile from "./Profile";
 
+
+
 const fetcher = (url, options = {}) =>
     fetch(url, 
     {
@@ -64,7 +66,7 @@ const Todos = () =>
 
         async function addTodo()
         {
-            const response = await fetcher("http://localhost:3000/api/todos", 
+            const response = await fetcher(`${apiUrl}/api/todos`, 
             {
                 method: "POST",
                 body: { title },
@@ -90,7 +92,7 @@ const Todos = () =>
        toast.success("Todo deleted!");
        await mutate(async () => 
        {
-            const response = await fetcher(`http://localhost:3000/api/todos/${id}`,
+            const response = await fetcher(`${apiUrl}/api/todos/${id}`,
             {
                 method: "DELETE"
             })
@@ -111,7 +113,7 @@ const Todos = () =>
     {
         await mutate(async () => 
         {
-            const response = await fetcher(`http://localhost:3000/api/todos/${id}`, 
+            const response = await fetcher(`${apiUrl}/api/todos/${id}`, 
                 {
                     method: "PUT",
                     body: {isCompleted: !isCompleted},
@@ -149,7 +151,7 @@ const Todos = () =>
         console.log({ title, id });
         await mutate(async () => 
         {
-            const response = await fetcher(`http://localhost:3000/api/todos/${id}`, 
+            const response = await fetcher(`${apiUrl}/api/todos/${id}`, 
                 {
                     method: "PUT",
                     body: { title },

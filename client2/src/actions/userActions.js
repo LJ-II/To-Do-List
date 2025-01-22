@@ -1,11 +1,14 @@
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export async function register(previousState, formData)
 {
+    
     try 
     {
         const email = formData.get("email");
         const password = formData.get("password");
         console.log({email, password});
-        const res = await fetch("http://localhost:3000/api/user/register", 
+        const res = await fetch(`${apiUrl}/api/user/register`, 
         {
             method: "POST",
             headers:
@@ -34,7 +37,7 @@ export async function login(previousState, formData)
         const email = formData.get("email");
         const password = formData.get("password");
         console.log({email, password});
-        const res = await fetch("http://localhost:3000/api/user/login", 
+        const res = await fetch(`${apiUrl}/api/user/login`, 
         {
             method: "POST",
             headers:
