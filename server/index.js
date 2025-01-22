@@ -34,7 +34,7 @@ app.use("/api/todos", ToDoRoute);
     });*/
 
     app.get("/", (req, res) => {
-        res.send(path.join(__dirname, "../client2/dist", "index.html"));
+        res.sendFile(path.join(__dirname, "../client2/dist", "index.html"));
     });
 
     app.use(express.static(path.join(__dirname, "../client2/dist")));
