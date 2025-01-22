@@ -33,7 +33,7 @@ app.use("/api/todos", ToDoRoute);
         res.send("Hello World!");
     });*/
 
-    app.get("/", (req, res) => {
+    app.get("*", (req, res) => {
         res.sendFile(path.join(__dirname, "../client2/dist", "index.html"));
     });
 
