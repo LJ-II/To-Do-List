@@ -26,10 +26,10 @@ app.use(cookieParser());
 app.use("/api/user", AuthRoute);
 app.use("/api/todos", ToDoRoute);
 
-/*app.get("/", (req, res, next) =>
+app.get("/", (req, res, next) =>
     {
         res.send("Hello World!");
-    });*/
+    });
 
 // global error handler
 app.use((err, req, res, next) => 
@@ -49,15 +49,15 @@ app.listen(PORT, () =>
     /*const express = require('express');
     const path = require('path');*/
     
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = dirname(__filename);
+    /*const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);*/
     // Serve static files from the React app
-    app.use(express.static(path.join(__dirname, '../client/build')));
+    /*app.use(express.static(path.join(__dirname, '../client/build')));*/
     
     // Catch-all route to serve the React app for undefined routes
-    app.get('*', (req, res) => {
+    /*app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-    });
+    });*/
     
     /*app.listen(PORT, () => console.log(`Server running on port ${PORT}`));*/
 
