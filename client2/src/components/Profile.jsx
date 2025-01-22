@@ -36,7 +36,6 @@ const Profile = () =>
                 <CircleUserRound className="transition ease-in hover:cursor-pointer hover:stroke-primary" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-                <DropdownMenuItem>Profile</DropdownMenuItem>
                 <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>

@@ -5,6 +5,9 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
 const app = express();
 const PORT = 3000;
@@ -43,4 +46,20 @@ app.listen(PORT, () =>
 
 
     
+    /*const express = require('express');*/
+    /*const path = require('path');
     
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    // Serve static files from the React app
+    app.use(express.static(path.join(__dirname, '../client/build')));
+    
+    // Catch-all route to serve the React app for undefined routes
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+    });
+    
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));*/
+
+    
+        
