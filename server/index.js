@@ -26,10 +26,16 @@ app.use(cookieParser());
 app.use("/api/user", AuthRoute);
 app.use("/api/todos", ToDoRoute);
 
-app.get("/", (req, res, next) =>
+/*app.get("/", (req, res, next) =>
     {
         res.send("Hello World!");
+    });*/
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "../client2/dist", "index.html"));
     });
+
+    app.use(express.static(path.join(__dirname, "../client2/dist")));
 
 // global error handler
 app.use((err, req, res, next) => 
