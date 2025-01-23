@@ -6,7 +6,7 @@
   "scripts": {
     "server": "nodemon index.js",
     "start": "node index.js",
-    "build": "npm install --legacy-peer-deps --prefix ./client2 && npm run build --prefix ./client2 && npm install --legacy peer-deps"
+    "build": "npm install --legacy-peer-deps --prefix ./client2 && npm run build --prefix ./client2 && npm install --legacy-peer-deps"
   },
   "keywords": [],
   "author": "",
