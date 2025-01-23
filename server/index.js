@@ -34,12 +34,12 @@ app.use("/api/todos", ToDoRoute);
     });*/
 
     app.get("/", (req, res) => {
-        res.sendFile(path.join(__dirname, "../client2/dist", "index.html"));
+        res.sendFile(path.join(__dirname, "/opt/render/project/src/client2/dist", "index.html"));
     });
 
-    app.use(express.static(path.join(__dirname, "../client2/dist")));
+    app.use(express.static(path.join(__dirname, "/opt/render/project/src/client2/dist")));
 
-    console.log(path.join(__dirname, "../client2/dist"));
+    console.log(path.join(__dirname, "/opt/render/project/src/client2/dist"));
     console.log(__dirname);
     console.log(__filename);
 
