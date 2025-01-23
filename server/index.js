@@ -22,7 +22,7 @@ dotenv.config();
 
 const corsOptions = 
 {
-    origin: "http://localhost:5173",
+    origin: "https://to-do-list-ok8c.onrender.com",
     credentials: true,
 };
 
