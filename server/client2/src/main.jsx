@@ -8,6 +8,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import { Toaster } from 'react-hot-toast';
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Toaster position="top-center" />

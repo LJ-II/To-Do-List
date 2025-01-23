@@ -12,13 +12,17 @@ import { dirname, join } from 'path';
 const app = express();
 const PORT = 3000;
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(__filename);
+
+app.use(express.static(path.join(__dirname, '/client2/dist')))
+
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/client2/dist/index.html')));
 
 dotenv.config();
 
 const corsOptions = 
 {
-    origin: "https://to-do-list-client-3etv.onrender.com",
+    origin: "http://localhost:5173",
     credentials: true,
 };
 
@@ -28,12 +32,14 @@ app.use(cookieParser());
 app.use("/api/user", AuthRoute);
 app.use("/api/todos", ToDoRoute);
 
-/*app.get("/", (req, res, next) =>
+
+
+app.get("/", (req, res, next) =>
     {
         res.send("Hello World!");
-    });*/
+    });
 
-    app.get("/", (req, res) => {
+    /*app.get("/", (req, res) => {
         res.sendFile(path.join(__dirname, "../client2/dist", "index.html"));
     });
 
@@ -41,7 +47,7 @@ app.use("/api/todos", ToDoRoute);
 
     console.log(path.join(__dirname, "../client2/dist"));
     console.log(__dirname);
-    console.log(__filename);
+    console.log(__filename);*/
 
 
 // global error handler

@@ -12,7 +12,7 @@ const Profile = () =>
     {
         try 
         {
-            const response = await fetch("https://to-do-list-7t86.onrender.com/api/user/logout", 
+            const response = await fetch("http://localhost:3000/api/user/logout", 
             {
                 method: "POST",
                 credentials: "include",
