@@ -6,7 +6,7 @@ export async function register(previousState, formData)
         const email = formData.get("email");
         const password = formData.get("password");
         console.log({email, password});
-        const res = await fetch("http://localhost:3000/api/user/register", 
+        const res = await fetch("https://to-do-list-ok8c.onrender.com/api/user/register", 
         {
             method: "POST",
             headers:

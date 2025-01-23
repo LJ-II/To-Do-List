@@ -24,7 +24,7 @@ const fetcher = (url, options = {}) =>
 
 const Todos = () =>
 {
-    const {data, error, mutate, isLoading} = useSWR("http://localhost:3000/api/todos", fetcher);
+    const {data, error, mutate, isLoading} = useSWR("https://to-do-list-ok8c.onrender.com/api/todos", fetcher);
     if (error)
     {
         return <h1 className="text-2xl py-2 text-center">Something went wrong!</h1>
@@ -65,7 +65,7 @@ const Todos = () =>
 
         async function addTodo()
         {
-            const response = await fetcher("http://localhost:3000/api/todos", 
+            const response = await fetcher("https://to-do-list-ok8c.onrender.com/api/todos", 
             {
                 method: "POST",
                 body: { title },
@@ -91,7 +91,7 @@ const Todos = () =>
        toast.success("Todo deleted!");
        await mutate(async () => 
        {
-            const response = await fetcher(`http://localhost:3000/api/todos/${id}`,
+            const response = await fetcher(`https://to-do-list-ok8c.onrender.com/api/todos/${id}`,
             {
                 method: "DELETE"
             })
@@ -112,7 +112,7 @@ const Todos = () =>
     {
         await mutate(async () => 
         {
-            const response = await fetcher(`http://localhost:3000/api/todos/${id}`, 
+            const response = await fetcher(`https://to-do-list-ok8c.onrender.com/api/todos/${id}`, 
                 {
                     method: "PUT",
                     body: {isCompleted: !isCompleted},
@@ -150,7 +150,7 @@ const Todos = () =>
         console.log({ title, id });
         await mutate(async () => 
         {
-            const response = await fetcher(`http://localhost:3000/api/todos/${id}`, 
+            const response = await fetcher(`https://to-do-list-ok8c.onrender.com/api/todos/${id}`, 
                 {
                     method: "PUT",
                     body: { title },
