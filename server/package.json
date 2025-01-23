@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "server": "nodemon index.js",
     "start": "node index.js",
-    "build": "npm install --prefix ./client2 && npm run build --prefix ./client2 && npm install"
+    "build": "npm install --legacy-peer-deps --prefix ./client2 && npm run build --prefix ./client2 && npm install --legacy peer-deps"
   },
   "keywords": [],
   "author": "",
