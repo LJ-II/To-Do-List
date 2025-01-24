@@ -28,10 +28,14 @@ https://to-do-list-ok8c.onrender.com
 ---
 
 ## Usage  
-1. Launch the app in your browser.  
-2. Create a new task by typing in the input field and clicking "Add Task."  
-3. Use the checkboxes or buttons to mark tasks as complete, edit, or delete them.  
-4. View your organized list to stay on top of your daily goals.
+1. Launch the app in your browser.
+2. Press the Profile icon and Logout.
+3. Then on the login page, click on "Register".
+4. Input your email and make a password.
+5. Login.
+6. Create a new task by typing in the input field and clicking "Add Task."  
+7. Use the checkboxes or buttons to mark tasks as complete, edit, or delete them.  
+8. View your organized list to stay on top of your daily goals.
 
 ---
 
