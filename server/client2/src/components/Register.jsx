@@ -32,6 +32,7 @@ const Register = () =>
     
     return(
         <div className="h-screen flex justify-center items-center transform -translate-y-16">
+            <h1 className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-4xl text-center mb-4 text-transparent bg-clip-text">Welcome to the Todo App</h1>
             <form action={formAction} className="flex flex-col gap-6 max-w-xl w-full px-8">
                 <div className="flex flex-col gap-2">
                     <Label>Email</Label>
