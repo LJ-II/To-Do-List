@@ -55,7 +55,7 @@ const Todos = () =>
         }
         const newTodo = 
         {
-            title: `Adding ${title} ...`,
+            title: `Adding "${title}" ...`,
             _id: Date.now().toString(),
             isCompleted:false,
         };
