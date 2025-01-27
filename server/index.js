@@ -34,7 +34,7 @@ app.use("/api/todos", ToDoRoute);
 
 
 
-app.get("/", (req, res, next) =>
+app.get("/register", (req, res, next) =>
     {
         res.send("Hello World!");
     });
