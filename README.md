@@ -29,10 +29,8 @@ https://to-do-list-ok8c.onrender.com/register
 
 ## Usage  
 1. Launch the app in your browser.
-2. Press the Profile icon and Logout.
-3. Then on the login page, click on "Register".
-4. Input your email and make a password.
-5. Login.
+2. Enter your email and creare a password.
+3. Then on the login page, re-enter your email and created password.
 6. Create a new task by typing in the input field and clicking "Add Task."  
 7. Use the checkboxes or buttons to mark tasks as complete, edit, or delete them.  
 8. View your organized list to stay on top of your daily goals.
