@@ -16,13 +16,13 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, '/client2/dist')))
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/client2/dist/index.html')));
+app.get('/register', (req, res) => res.sendFile(path.join(__dirname, '/client2/dist/index.html')));
 
 dotenv.config();
 
 const corsOptions = 
 {
-    origin: "https://to-do-list-ok8c.onrender.com/login",
+    origin: "https://to-do-list-ok8c.onrender.com",
     credentials: true,
 };
 

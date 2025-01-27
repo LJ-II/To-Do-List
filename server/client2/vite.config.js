@@ -20,7 +20,7 @@ export default defineConfig(
   server: {
     proxy: {
       '/api' : {
-        target: "http://localhost:5173/register",
+        target: "http://localhost:5173",
         changeOrigin: true
       }
     }
