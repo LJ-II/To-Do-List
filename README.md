@@ -23,7 +23,7 @@ The To-Do List App is a simple, user-friendly application designed to help you m
 
 3. Access the App  
 Open your browser and go to:
-https://to-do-list-ok8c.onrender.com
+https://to-do-list-ok8c.onrender.com/register
 
 ---
 
